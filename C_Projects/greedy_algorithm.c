@@ -6,6 +6,7 @@ void greedy_algorithm(void);
 int main(void)
 {
     greedy_algorithm();
+    return 0;
 }
 
 void greedy_algorithm(void)
@@ -34,19 +35,15 @@ int calculate_change(int cents)
 {
     int coins = 0;
 
-    // Calculate the number of quarters
     coins += cents / 25;
     cents %= 25;
 
-    // Calculate the number of dimes
     coins += cents / 10;
     cents %= 10;
 
-    // Calculate the number of nickels
     coins += cents / 5;
     cents %= 5;
 
-    // Remaining cents are pennies
     coins += cents;
 
     printf("Total coins used: %d\n", coins);
