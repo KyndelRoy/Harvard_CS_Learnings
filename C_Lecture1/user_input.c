@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void trim_newline(char *str);
+
 int main(void)
 {
     int age = 0;
@@ -22,10 +24,18 @@ int main(void)
     printf("Enter your full name: ");
     fgets(name, sizeof(name), stdin); // fgets(variable, size, stdin) reads a line of text from the user
     // sizeof() is a function to ensure to get the size of the array 
-    name[strlen(name) - 1] = '\0'; // Remove the newline character from fgets
+    trim_newline(name); // Remove the newline character from fgets
     
     printf("Your age: %d\n", age);
     printf("Your GPA: %.2f\n", gpa);
     printf("Your grade: %c\n", grade);
     printf("Your name: %s\n", name); // %s is used to print strings
+}
+
+void trim_newline(char *str)  // this function removes the newline character from a string
+{
+    size_t len = strlen(str);
+    if (len > 0 && str[len - 1] == '\n') {
+        str[len - 1] = '\0'; // Remove the newline character
+    }
 }
