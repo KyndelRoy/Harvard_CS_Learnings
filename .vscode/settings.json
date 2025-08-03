@@ -4,6 +4,7 @@
         "algorithm": "c",
         "flat_map": "c",
         "flat_set": "c",
-        "format": "c"
+        "format": "c",
+        "utils.h": "c"
     }
 }

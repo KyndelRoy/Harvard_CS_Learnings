@@ -2,9 +2,12 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "types.h"
 #include "addBooks.h"
 #include "addUser.h"
+#include "borrowBook.h"
+#include "display_users.h"
+#include "load_data.h"
+#include "types.h"
 
 int main(void)
 {
@@ -12,12 +15,12 @@ int main(void)
     user library_users[MAX_USERS];
     borrowed_record library_borrowed_records[MAX_BORROWED_RECORDS];
 
-    int book_count = 0;
-    int next_book = 1;
-    int user_count = 0;
-    int next_user = 1;
+    int book_count = 0, next_book = 1;
+    int user_count = 0, next_user = 1;
     int borrowed_count = 0;
     
+    load_users(library_users, &user_count, &next_user, "data_users.txt");
+    load_books(library_books, &book_count, &next_book, "data_books.txt");
     int choice;
     do {
         printf("Library System Menu:\n");
@@ -40,6 +43,21 @@ int main(void)
         case 2:
             addUser(library_users, &user_count, &next_user);
             break;
+        case 3:
+            borrowBook(library_books, library_users, library_borrowed_records, &book_count, &user_count, &borrowed_count);
+            break;  
+        case 4:
+            //
+            break;
+        case 5:
+            //
+            break;
+        case 6:
+            displayUsers(library_users, &user_count);
+            break;
+        case 7:
+            //
+            break;              
         case 8:
             printf("Exiting the library system. Goodbye!\n");
             return 0;   

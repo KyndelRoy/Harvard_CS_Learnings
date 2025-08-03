@@ -18,6 +18,7 @@ typedef struct
     char author[MAX_AUTHOR_LENGTH];
     int id;
     int available_copies;
+    bool is_deleted;
 } book;
 
 typedef struct 

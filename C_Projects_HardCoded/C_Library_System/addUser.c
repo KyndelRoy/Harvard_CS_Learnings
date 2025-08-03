@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "types.h"
 #include "addUser.h"   
 #include "utils.h"
 
@@ -23,18 +22,21 @@ void addUser(user *library_users, int *user_count, int *next_user)
     fgets(contact, sizeof(contact), stdin);
     trim_newline(contact);
 
+    // Validate contact length
     if (strlen(name) == 0 || strlen(contact) != 10)
     {
         printf("Invalid input. User not added.\n");
         return;
     }
 
+    // Check if name or contact exceeds maximum length
     if (strlen(name) >= MAX_NAME_LENGTH || strlen(contact) >= MAX_CONTACT_LENGTH)
     {
         printf("Name or contact too long. Please limit to 50 characters for name and 10 digits for contact.\n");
         return;
     }
 
+    // Check if user with the same contact already exists
     for (int i = 0; i < *user_count; i++)
     {
         if (strcmp(library_users[i].contact, contact) == 0)

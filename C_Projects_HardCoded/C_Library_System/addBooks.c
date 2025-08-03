@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "types.h"
 #include "addBooks.h"
 #include "utils.h"
 
@@ -28,18 +27,22 @@ void addBook(book *library_books, int *book_count, int *next_book)
     scanf("%d", &copies);
     while(getchar() != '\n'); // Clear the input buffer
 
+    // Validate input
+    // Check if title or author is empty, or if copies are less than or equal to zero
     if (strlen(title) == 0 || strlen(author) == 0 || copies <= 0) 
     {
         printf("Invalid input. Book not added.\n");
         return;
     }
 
+    // Check if title or author exceeds maximum length
     if (strlen(title) >= MAX_TITLE_LENGTH || strlen(author) >= MAX_AUTHOR_LENGTH)
     {
         printf("Title or author name too long. Please limit to 60 characters.\n");
         return;
     }
 
+    // Check if book with the same title and author already exists
     for (int i = 0; i < *book_count; i++)
     {
         if (strcmp(library_books[i].title, title) == 0 && strcmp(library_books[i].author, author) == 0)

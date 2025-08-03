@@ -1,0 +1,25 @@
+The C Programming Language,Brian Kernighan,5,0
+Clean Code,Robert C. Martin,3,0
+Introduction to Algorithms,Thomas H. Cormen,4,0
+Design Patterns,Erich Gamma,2,0
+Artificial Intelligence,Stuart Russell,3,0
+Operating System Concepts,Abraham Silberschatz,2,0
+Computer Networks,Andrew S. Tanenbaum,4,0
+Database System Concepts,Henry F. Korth,3,0
+Modern Operating Systems,Andrew S. Tanenbaum,2,0
+Programming Pearls,Jon Bentley,1,0
+Effective C++,Scott Meyers,2,0
+Head First Design Patterns,Eric Freeman,3,0
+Algorithms,Robert Sedgewick,2,0
+Code Complete,Steve McConnell,4,0
+Refactoring,Martin Fowler,2,0
+The Pragmatic Programmer,Andrew Hunt,3,0
+Structure and Interpretation of Computer Programs,Harold Abelson,2,0
+Compilers,Alfred V. Aho,1,0
+The Mythical Man-Month,Fred Brooks,2,0
+Cracking the Coding Interview,Gayle Laakmann McDowell,5,0
+Python Crash Course,Eric Matthes,3,0
+Automate the Boring Stuff with Python,Al Sweigart,2,0
+Learning JavaScript Design Patterns,Addy Osmani,2,0
+You Don't Know JS,Kyle Simpson,3,0
+Deep Learning,Ian Goodfellow,2,0
