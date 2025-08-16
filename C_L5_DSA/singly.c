@@ -10,24 +10,27 @@ int main(void){
     Node *list = NULL;
 
     for (int i = 0; i < 3; i++) {
-        Node *n = malloc(sizeof(Node));
+        Node *n = malloc(sizeof(Node)); // create new node or struct
 
         if (n == NULL){
             fprintf(stderr, "Memory allocation failed\n");
             return 1;
         }
         n->data = i; // Assign data to the new node
-        n->next = list;
+        n->next = list; // Link new node to the current list
         list = n; // Insert node at the beginning of the list
     }
 
+    // Print the linked list
     for (Node *current = list; current != NULL; current = current->next) {
         printf("%d\n", current->data); // Print each node's data
     }
 
+    // Free the linked list
     while (list != NULL){
         Node *tmp = list->next; // Store next node
         free(list); // Free current node
         list = tmp; // Move to next node
     }
+    return 0; // Return success
 }
