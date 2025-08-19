@@ -21,7 +21,6 @@ int main(void){
 void reverse(int numbers[], int size) {
     int start = 0;
     int end = size - 1;
-    int temp;
     while (start < end) {
         // Swap the elements at start and end
         int temp = numbers[start];
